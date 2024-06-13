@@ -9,10 +9,10 @@ app.set('view engine', 'ejs');
 
 const ilceler = require("./ilceler.json");
 
-
-app.get('/', (req, res) => {
-    res.render('index', { ilceler }); 
+app.get('/iletisim', (req, res) => {
+    res.render('iletisim');
 });
+
 //filter kısmına string yazınca boşluk atıyor onu düzelticeğim.
 
 app.get('/search', (req, res) => {
@@ -29,6 +29,9 @@ app.get('/search', (req, res) => {
     res.json(filteredIlceler);
 });
 
+app.get('/', (req, res) => {
+    res.render('index', { ilceler }); 
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
