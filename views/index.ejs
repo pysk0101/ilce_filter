@@ -68,7 +68,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const ilcelerTable = document.getElementById('ilcelerTable').getElementsByTagName('tbody')[0];
-                    ilcelerTable.innerHTML = ''; // Clear existing table rows
+                    ilcelerTable.innerHTML = ''; 
                     data.forEach(ilce => {
                         const row = `<tr>
                                         <td style="border: 2px solid black">${ilce.id}</td>
