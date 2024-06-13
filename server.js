@@ -10,10 +10,13 @@ app.set('view engine', 'ejs');
 const ilceler = require("./ilceler.json");
 
 app.get('/iletisim', (req, res) => {
-    res.render('iletisim');
+    res.render("iletisim");
 });
 
-//filter kısmına string yazınca boşluk atıyor onu düzelticeğim.
+app.post("/iletisim",  (req, res) => {
+    res.sendStatus(200);
+})
+
 
 app.get('/search', (req, res) => {
     const plaka = req.query.plaka; 
