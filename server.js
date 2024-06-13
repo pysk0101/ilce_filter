@@ -13,11 +13,15 @@ const ilceler = require("./ilceler.json");
 app.get('/', (req, res) => {
     res.render('index', { ilceler }); 
 });
-
+//filter kısmına string yazınca boşluk atıyor onu düzelticeğim.
 
 app.get('/search', (req, res) => {
     const plaka = req.query.plaka; 
     
+    if (!plaka) {
+        return res.json(ilceler);
+    }
+
     const filteredIlceler = ilceler.filter(ilce =>
         ilce.sehir_id === plaka
     );
